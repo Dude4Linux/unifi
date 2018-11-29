@@ -1,26 +1,18 @@
- * Appliance name
-   - turnkey-unifi
- **************************************
+turnkey-unifi-14.2 (1) turnkey; urgency=low
 
- * Changes start here *****************
  * Initial release of UniFi for TKLdev
 
  * UniFi Appliance:
    * Description or Purpose
    - Preconfigured installation of Ubiquiti's UniFi controller
-	 - Caching DNS server configured for UniFi (optional)
-	 - OpenVPN server configured for multi-tenant wireless (optional)
 
    * List of appliances included in plan/main
    - turnkey-core
 
    * Additional Debian packages included in plan/main
-   - bind9
-   - openvpn
+   - 
 
-   - Any special notes about appliance
-   - Optional services, DNS and OpenVPN, are disabled at first boot.
-	 - Use update-rc.d <service> enable
+   * Any special notes about appliance
    - 
 
  * Please refer to turnkey-core's changelog for changes common to all
