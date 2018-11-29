@@ -11,24 +11,17 @@ release=$( lsb_release -sc )
 apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50
 apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 
-# Add to sources.list.d
-echo "deb http://www.ubnt.com/downloads/unifi/distros/deb/debian debian ubiquiti" > /etc/apt/sources.list.d/20ubiquiti.list
-
-if [[ $release == 'squeeze' ]]; then
-	echo "deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen" > /etc/apt/sources.list.d/21mongodb.list
-fi
-
 # Ensure that non-free packages are available
 sed -i -e "/non-free/ s/^#\s*//" /etc/apt/sources.list.d/sources.list
 
 # Install packages
 apt-get -q update
-apt-get -qy	install unifi
+apt-get -qy install unifi
 
 # Stop services
 service unifi stop
 service mongodb stop
 
 # Patch init.d/unifi
-sed -i 's/^JAVA_HOME=.*$/JAVA_HOME="$( readlink -f "$( which java )" | sed "s:bin/.*$::" )"/' /etc/init.d/unifi
+#sed -i 's/^JAVA_HOME=.*$/JAVA_HOME="$( readlink -f "$( which java )" | sed "s:bin/.*$::" )"/' /etc/init.d/unifi
 
