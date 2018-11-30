@@ -8,8 +8,8 @@
 release=$( lsb_release -sc )
 
 # Install apt keys for Ubiquiti and Mongodb repos
-apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50
-apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50
+#apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 
 # Ensure that non-free packages are available
 sed -i -e "/non-free/ s/^#\s*//" /etc/apt/sources.list.d/sources.list
